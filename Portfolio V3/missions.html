@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- ===== Réglages de la page (invisibles pour le visiteur) ===== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio BTS SIO option SISR de Tomas Latour, alternant aux Écoles Vidal à Toulouse.">
+<title>Missions · Tomas Latour</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!-- Les polices (Google Fonts) puis notre fichier de style commun -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== EN-TÊTE : le même sur toutes les pages ===== -->
+<header class="entete">
+  <div class="conteneur">
+    <div class="entete-haut">
+      <a class="marque" href="index.html"><img src="photo.jpg" alt="" width="36" height="36">Tomas Latour</a>
+      <button class="bouton bouton-contour bouton-petit" id="bouton-theme" type="button">Mode sombre</button>
+    </div>
+    <!-- Le menu : la classe "actif" colore la page où l'on se trouve -->
+    <nav class="menu">
+      <a href="index.html">Accueil</a>
+      <a href="parcours.html">Parcours</a>
+      <a href="entreprise.html">Entreprise</a>
+      <a href="missions.html" class="actif">Missions</a>
+      <a href="competences.html">Compétences</a>
+      <a href="synthese.html">Tableau de synthèse</a>
+      <a href="veille.html">Veille</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== CONTENU DE LA PAGE ===== -->
+<main class="conteneur">
+  <!-- Titre de la page -->
+  <div class="haut-page">
+    <span class="code"><b>tomas@vidal</b>:~/missions$</span>
+    <h1>Mes missions en entreprise</h1>
+    <p>Cinq réalisations choisies parmi mon travail aux Écoles Vidal. Chaque fiche indique les blocs du référentiel concernés.</p>
+  </div>
+
+  <!-- Légende des couleurs des blocs -->
+  <div class="legende">
+    <div><span class="bloc b1">Bloc 1</span> Support et mise à disposition de services informatiques</div>
+    <div><span class="bloc b2">Bloc 2</span> Administration des systèmes et des réseaux</div>
+    <div><span class="bloc b3">Bloc 3</span> Cybersécurité des services informatiques</div>
+  </div>
+
+  <section>
+    <div class="missions">
+      <!-- ===== MISSION 1 ===== -->
+      <article class="mission" id="vlan">
+        <div class="mission-haut">
+          <div><span class="code">Mission 01</span><h3>Création d'un VLAN dédié au BTS SIO</h3></div>
+          <div class="blocs"><span class="bloc b2">Bloc 2</span></div>
+        </div>
+        <p>Les postes de la salle du BTS SIO étaient sur le même réseau que le reste du campus. Or, les étudiants y font des travaux pratiques réseau qui peuvent perturber les autres services. L'objectif était de les isoler dans un VLAN qui leur est propre.</p>
+        <div class="puces"><span class="puce">VLAN 802.1Q</span><span class="puce">Switch D-Link DGS-1510</span><span class="puce">DHCP</span><span class="puce">Pare-feu</span></div>
+        <details class="details details-image">
+          <summary class="bouton bouton-petit"><span class="voir">Voir la capture</span><span class="masquer">Masquer la capture</span></summary>
+          <figure class="capture">
+            <a href="mission1-vlan.jpg" target="_blank" rel="noopener"><img src="mission1-vlan.jpg" alt="Page 802.1Q VLAN du switch avec le VLAN 50 BTS_SIO" loading="lazy"></a>
+            <figcaption>Le VLAN 50 « BTS_SIO » dans l'interface du switch D-Link DGS-1510-52X (informations sensibles masquées).</figcaption>
+          </figure>
+        </details>
+        <!-- <details> : bloc qui s'ouvre et se ferme au clic sur <summary> -->
+        <details class="details">
+          <summary class="bouton bouton-contour bouton-petit"><span class="voir">Voir les détails</span><span class="masquer">Masquer les détails</span></summary>
+          <div class="details-contenu">
+          <h4>Environnement technique</h4>
+          <ul>
+            <li>Switch D-Link DGS-1510-52X, configuré par son interface web</li>
+            <li>Serveur DHCP</li>
+            <li>Pare-feu de l'école</li>
+          </ul>
+          <h4>Étapes de réalisation</h4>
+          <ol>
+            <li><strong>Analyse :</strong> repérage des prises et des ports de switch utilisés par la salle du BTS SIO.</li>
+            <li><strong>Conception :</strong> choix du numéro de VLAN et de la plage d'adresses IP, validé avec mon tuteur.</li>
+            <li><strong>Configuration du switch :</strong> création du VLAN 50 nommé « BTS_SIO » (norme 802.1Q), port 1/0/11 en membre non étiqueté (accès) et port 1/0/49 en membre étiqueté (lien trunk).</li>
+            <li><strong>Adressage :</strong> création d'une étendue DHCP pour ce VLAN.</li>
+            <li><strong>Filtrage :</strong> règles sur le pare-feu pour autoriser Internet et bloquer l'accès aux réseaux administratifs.</li>
+            <li><strong>Tests et documentation :</strong> vérification de l'adresse reçue par chaque poste et mise à jour du schéma réseau.</li>
+          </ol>
+          <h4>Difficulté rencontrée</h4>
+          <div class="difficulte"><strong>Certains postes gardaient leur ancienne adresse IP après le changement.</strong>Ils avaient encore un bail DHCP de l'ancien réseau. J'ai forcé le renouvellement avec les commandes ipconfig /release puis ipconfig /renew.</div>
+          </div>
+        </details>
+        <h4>Compétences mobilisées</h4>
+        <div class="comp-blocs">
+          <div class="comp-bloc b2"><span class="code">Bloc 2 · Administration des systèmes et des réseaux</span><ul><li>Concevoir une solution d'infrastructure réseau</li><li>Installer, tester et déployer une solution d'infrastructure réseau</li></ul></div>
+        </div>
+      </article>
+      <!-- ===== MISSION 2 ===== -->
+      <article class="mission" id="arrivee">
+        <div class="mission-haut">
+          <div><span class="code">Mission 02</span><h3>Préparation des postes des nouveaux arrivants</h3></div>
+          <div class="blocs"><span class="bloc b1">Bloc 1</span><span class="bloc b3">Bloc 3</span></div>
+        </div>
+        <p>Quand un salarié arrive, il doit avoir, dès le premier jour, un poste prêt, ses comptes et sa ligne téléphonique. Je prépare l'ensemble de A à Z.</p>
+        <div class="puces"><span class="puce">Active Directory</span><span class="puce">Microsoft 365</span><span class="puce">3CX</span><span class="puce">Windows</span></div>
+        <!-- <details> : bloc qui s'ouvre et se ferme au clic sur <summary> -->
+        <details class="details">
+          <summary class="bouton bouton-contour bouton-petit"><span class="voir">Voir les détails</span><span class="masquer">Masquer les détails</span></summary>
+          <div class="details-contenu">
+          <h4>Environnement technique</h4>
+          <ul>
+            <li>Active Directory</li>
+            <li>Centre d'administration Microsoft 365</li>
+            <li>Console d'administration 3CX (téléphonie)</li>
+            <li>Postes Windows</li>
+          </ul>
+          <h4>Étapes de réalisation</h4>
+          <ol>
+            <li><strong>Compte Active Directory :</strong> création dans la bonne unité d'organisation et ajout aux groupes du service.</li>
+            <li><strong>Compte Microsoft 365 :</strong> création du compte, attribution de la licence et de la boîte mail.</li>
+            <li><strong>Téléphonie :</strong> création de l'extension 3CX et attribution d'un numéro.</li>
+            <li><strong>Poste de travail :</strong> préparation de l'ordinateur, installation des logiciels du service et inventaire.</li>
+            <li><strong>Remise :</strong> premier démarrage avec le salarié et explication des règles de mot de passe.</li>
+          </ol>
+          <h4>Difficulté rencontrée</h4>
+          <div class="difficulte"><strong>Un nouveau compte n'avait pas accès aux mêmes ressources que ses collègues.</strong>Il manquait l'ajout à un groupe. Depuis, je compare les groupes avec ceux d'un collègue du même service avant de remettre le poste.</div>
+          </div>
+        </details>
+        <h4>Compétences mobilisées</h4>
+        <div class="comp-blocs">
+          <div class="comp-bloc b1"><span class="code">Bloc 1 · Support et mise à disposition de services informatiques</span><ul><li>Gérer le patrimoine informatique</li><li>Mettre à disposition des utilisateurs un service informatique</li></ul></div>
+          <div class="comp-bloc b3"><span class="code">Bloc 3 · Cybersécurité des services informatiques</span><ul><li>Protéger les données à caractère personnel</li></ul></div>
+        </div>
+      </article>
+      <!-- ===== MISSION 3 ===== -->
+      <article class="mission" id="mfa">
+        <div class="mission-haut">
+          <div><span class="code">Mission 03</span><h3>Déploiement de Microsoft Authenticator</h3></div>
+          <div class="blocs"><span class="bloc b1">Bloc 1</span><span class="bloc b3">Bloc 3</span></div>
+        </div>
+        <p>Les comptes Microsoft 365 du personnel administratif n'étaient protégés que par un mot de passe : un mot de passe volé par hameçonnage suffisait pour se connecter. J'ai participé au déploiement de la double authentification sur tout le campus.</p>
+        <div class="puces"><span class="puce">Microsoft 365</span><span class="puce">MFA</span><span class="puce">Microsoft Authenticator</span><span class="puce">Excel</span></div>
+        <details class="details details-image">
+          <summary class="bouton bouton-petit"><span class="voir">Voir la capture</span><span class="masquer">Masquer la capture</span></summary>
+          <figure class="capture">
+            <a href="mission3-authenticator.jpg" target="_blank" rel="noopener"><img src="mission3-authenticator.jpg" alt="Tableau Excel de suivi du déploiement de Microsoft Authenticator par service" loading="lazy"></a>
+            <figcaption>Mon tableau de suivi du déploiement, service par service : vert = équipé, rouge = à faire (noms masqués).</figcaption>
+          </figure>
+        </details>
+        <!-- <details> : bloc qui s'ouvre et se ferme au clic sur <summary> -->
+        <details class="details">
+          <summary class="bouton bouton-contour bouton-petit"><span class="voir">Voir les détails</span><span class="masquer">Masquer les détails</span></summary>
+          <div class="details-contenu">
+          <h4>Environnement technique</h4>
+          <ul>
+            <li>Centre d'administration Microsoft 365</li>
+            <li>Application Microsoft Authenticator sur les téléphones</li>
+            <li>Guide utilisateur</li>
+          </ul>
+          <h4>Étapes de réalisation</h4>
+          <ol>
+            <li><strong>Planification :</strong> déploiement service par service, pour ne pas bloquer tout le monde le même jour.</li>
+            <li><strong>Suivi :</strong> tableau Excel par service (pédagogie BTS, SUP et VF, qualité, admissions, communication, commercial, accueil, absences, RH) : vert quand la personne est équipée, rouge quand il reste à faire.</li>
+            <li><strong>Communication :</strong> message aux équipes pour expliquer pourquoi la double authentification devient obligatoire.</li>
+            <li><strong>Guide :</strong> rédaction d'une fiche pas à pas pour installer et associer l'application.</li>
+            <li><strong>Accompagnement :</strong> passage dans les bureaux pour aider chaque personne.</li>
+            <li><strong>Activation :</strong> activation de la MFA sur les comptes, puis vérification des connexions.</li>
+          </ol>
+          <h4>Difficulté rencontrée</h4>
+          <div class="difficulte"><strong>Certaines personnes changeaient de téléphone et perdaient l'accès à leur compte.</strong>J'ai suivi la procédure de réinitialisation des méthodes d'authentification dans la console, puis j'ai associé de nouveau l'application sur le nouveau téléphone.</div>
+          </div>
+        </details>
+        <h4>Compétences mobilisées</h4>
+        <div class="comp-blocs">
+          <div class="comp-bloc b1"><span class="code">Bloc 1 · Support et mise à disposition de services informatiques</span><ul><li>Mettre à disposition des utilisateurs un service informatique</li></ul></div>
+          <div class="comp-bloc b3"><span class="code">Bloc 3 · Cybersécurité des services informatiques</span><ul><li>Sécuriser les équipements et les usages des utilisateurs</li></ul></div>
+        </div>
+      </article>
+      <!-- ===== MISSION 4 ===== -->
+      <article class="mission" id="parefeu">
+        <div class="mission-haut">
+          <div><span class="code">Mission 04</span><h3>Règles de pare-feu pour les examens</h3></div>
+          <div class="blocs"><span class="bloc b2">Bloc 2</span><span class="bloc b3">Bloc 3</span></div>
+        </div>
+        <p>Pendant les examens sur ordinateur, les étudiants ne doivent pas avoir accès à Internet. Je crée puis je retire les règles de pare-feu qui coupent la connexion de la salle concernée.</p>
+        <div class="puces"><span class="puce">Pare-feu</span><span class="puce">Règles de filtrage</span><span class="puce">VLAN</span></div>
+        <!-- <details> : bloc qui s'ouvre et se ferme au clic sur <summary> -->
+        <details class="details">
+          <summary class="bouton bouton-contour bouton-petit"><span class="voir">Voir les détails</span><span class="masquer">Masquer les détails</span></summary>
+          <div class="details-contenu">
+          <h4>Environnement technique</h4>
+          <ul>
+            <li>Pare-feu de l'école</li>
+            <li>Plages d'adresses des salles informatiques</li>
+          </ul>
+          <h4>Étapes de réalisation</h4>
+          <ol>
+            <li><strong>Préparation :</strong> identification de la salle, de sa plage d'adresses et des horaires de l'examen.</li>
+            <li><strong>Règle :</strong> création d'une règle qui bloque l'accès à Internet pour cette plage.</li>
+            <li><strong>Exceptions :</strong> autorisation des seuls services nécessaires à l'examen.</li>
+            <li><strong>Test :</strong> vérification depuis un poste de la salle avant le début de l'épreuve.</li>
+            <li><strong>Retour à la normale :</strong> désactivation de la règle à la fin de l'examen.</li>
+          </ol>
+          <h4>Difficulté rencontrée</h4>
+          <div class="difficulte"><strong>Une règle trop large aurait pu couper d'autres salles en même temps.</strong>Je cible uniquement la plage d'adresses de la salle concernée, et je vérifie depuis une salle voisine que la connexion fonctionne toujours.</div>
+          </div>
+        </details>
+        <h4>Compétences mobilisées</h4>
+        <div class="comp-blocs">
+          <div class="comp-bloc b2"><span class="code">Bloc 2 · Administration des systèmes et des réseaux</span><ul><li>Exploiter, dépanner et superviser une solution d'infrastructure réseau</li></ul></div>
+          <div class="comp-bloc b3"><span class="code">Bloc 3 · Cybersécurité des services informatiques</span><ul><li>Garantir la disponibilité, l'intégrité et la confidentialité des services informatiques et des données de l'organisation face à des cyberattaques</li></ul></div>
+        </div>
+      </article>
+      <!-- ===== MISSION 5 ===== -->
+      <article class="mission" id="support">
+        <div class="mission-haut">
+          <div><span class="code">Mission 05</span><h3>Support de niveau 1 et 2</h3></div>
+          <div class="blocs"><span class="bloc b1">Bloc 1</span><span class="bloc b2">Bloc 2</span></div>
+        </div>
+        <p>Je traite les tickets du campus et des écoles partenaires. Selon le cas, j'interviens sur place ou je prends la main à distance sur le poste, notamment pour les écoles éloignées.</p>
+        <div class="puces"><span class="puce">Tickets</span><span class="puce">Prise en main à distance</span><span class="puce">Windows</span><span class="puce">macOS</span><span class="puce">Réseau</span></div>
+        <!-- <details> : bloc qui s'ouvre et se ferme au clic sur <summary> -->
+        <details class="details">
+          <summary class="bouton bouton-contour bouton-petit"><span class="voir">Voir les détails</span><span class="masquer">Masquer les détails</span></summary>
+          <div class="details-contenu">
+          <h4>Environnement technique</h4>
+          <ul>
+            <li>Outil de gestion des tickets</li>
+            <li>Logiciel de prise en main à distance</li>
+            <li>Postes Windows et Mac, imprimantes, réseau</li>
+          </ul>
+          <h4>Étapes de réalisation</h4>
+          <ol>
+            <li><strong>Prise en charge :</strong> lecture du ticket et premier contact avec l'utilisateur.</li>
+            <li><strong>Diagnostic :</strong> recherche de la cause : matériel, réseau, compte ou logiciel.</li>
+            <li><strong>Intervention :</strong> sur place au campus, ou à distance pour les écoles éloignées.</li>
+            <li><strong>Escalade :</strong> transmission au niveau supérieur quand le problème dépasse mes droits.</li>
+            <li><strong>Clôture :</strong> explication de la solution à l'utilisateur et fermeture du ticket.</li>
+          </ol>
+          <h4>Difficulté rencontrée</h4>
+          <div class="difficulte"><strong>Un poste d'une école éloignée n'avait plus de réseau, donc aucune prise en main à distance n'était possible.</strong>J'ai guidé l'utilisateur par téléphone pour vérifier le câble et la prise réseau, puis j'ai repris la main à distance une fois la connexion revenue.</div>
+          </div>
+        </details>
+        <h4>Compétences mobilisées</h4>
+        <div class="comp-blocs">
+          <div class="comp-bloc b1"><span class="code">Bloc 1 · Support et mise à disposition de services informatiques</span><ul><li>Répondre aux incidents et aux demandes d'assistance et d'évolution</li></ul></div>
+          <div class="comp-bloc b2"><span class="code">Bloc 2 · Administration des systèmes et des réseaux</span><ul><li>Exploiter, dépanner et superviser une solution d'infrastructure réseau</li></ul></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Autres activités, plus courtes -->
+  <section class="bloc-page">
+    <h2>Autres activités</h2>
+    <div class="grille grille-quatre">
+      <div class="carte"><div class="blocs"><span class="bloc b1">Bloc 1</span><span class="bloc b2">Bloc 2</span></div><h3>Salles informatiques</h3><p>Installation de Veyon et du plugin Théia sur les postes, remise en état des salles et vérification du matériel.</p></div>
+      <div class="carte"><div class="blocs"><span class="bloc b1">Bloc 1</span><span class="bloc b3">Bloc 3</span></div><h3>Maintenance et RGPD</h3><p>Maintenance des PC, dans le respect du RGPD et des règles du pare-feu.</p></div>
+      <div class="carte"><div class="blocs"><span class="bloc b1">Bloc 1</span></div><h3>Applications métier</h3><p>Support sur Ypareo, EBP et Moodle, et création des cohortes Moodle.</p></div>
+    </div>
+
+    <!-- Prêts de PC : carte en pleine largeur avec les deux formulaires -->
+    <div class="carte carte-large">
+      <div class="blocs"><span class="bloc b1">Bloc 1</span></div>
+      <h3>Prêts et retours de PC</h3>
+      <p>Je gère le prêt des ordinateurs portables aux étudiants. Au départ, l'étudiant signe une déclaration de prise en dépôt avec la référence du PC (par exemple SIO-11) et dépose une caution. Au retour, je fais l'état des lieux du matériel (écran, clavier, alimentation, pavé tactile, état général) avant de signer la restitution.</p>
+      <details class="details details-image">
+        <summary class="bouton bouton-petit"><span class="voir">Voir les formulaires</span><span class="masquer">Masquer les formulaires</span></summary>
+      <div class="captures">
+        <figure class="capture"><a href="pret-pc-depot.jpg" target="_blank" rel="noopener"><img src="pret-pc-depot.jpg" alt="Formulaire de déclaration de prise en dépôt d'un ordinateur portable" loading="lazy"></a><figcaption>Déclaration de prise en dépôt</figcaption></figure>
+        <figure class="capture"><a href="pret-pc-retour.jpg" target="_blank" rel="noopener"><img src="pret-pc-retour.jpg" alt="Formulaire de déclaration de retour avec état des lieux" loading="lazy"></a><figcaption>Déclaration de retour et état des lieux</figcaption></figure>
+      </div>
+      </details>
+    </div>
+  </section>
+</main>
+
+<!-- ===== PIED DE PAGE ===== -->
+<footer>
+  <div class="conteneur pied">
+    <span>Tomas Latour · BTS SIO option SISR · Écoles Vidal, Toulouse · 2025-2027</span>
+    <span><a href="https://www.linkedin.com/in/tomas-latour-89b52a328/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Tomas090405" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
