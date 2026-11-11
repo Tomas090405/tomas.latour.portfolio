@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- ===== Réglages de la page (invisibles pour le visiteur) ===== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio BTS SIO option SISR de Tomas Latour, alternant aux Écoles Vidal à Toulouse.">
+<title>Compétences · Tomas Latour</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!-- Les polices (Google Fonts) puis notre fichier de style commun -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== EN-TÊTE : le même sur toutes les pages ===== -->
+<header class="entete">
+  <div class="conteneur">
+    <div class="entete-haut">
+      <a class="marque" href="index.html"><img src="photo.jpg" alt="" width="36" height="36">Tomas Latour</a>
+      <button class="bouton bouton-contour bouton-petit" id="bouton-theme" type="button">Mode sombre</button>
+    </div>
+    <!-- Le menu : la classe "actif" colore la page où l'on se trouve -->
+    <nav class="menu">
+      <a href="index.html">Accueil</a>
+      <a href="parcours.html">Parcours</a>
+      <a href="entreprise.html">Entreprise</a>
+      <a href="missions.html">Missions</a>
+      <a href="competences.html" class="actif">Compétences</a>
+      <a href="synthese.html">Tableau de synthèse</a>
+      <a href="veille.html">Veille</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== CONTENU DE LA PAGE ===== -->
+<main class="conteneur">
+  <!-- Titre de la page -->
+  <div class="haut-page">
+    <span class="code"><b>tomas@vidal</b>:~/competences$</span>
+    <h1>Compétences</h1>
+    <p>Les compétences des trois blocs du référentiel du BTS SIO option SISR, et les missions qui les prouvent.</p>
+  </div>
+  <!-- ===== BLOC 1 ===== -->
+  <section class="bloc-ref b1">
+    <div class="bloc-ref-haut">
+      <span class="bloc-numero">Bloc 1</span>
+      <h2>Support et mise à disposition de services informatiques</h2>
+      <span class="code">Épreuve E4</span>
+    </div>
+      <div class="competence"><strong>Gérer le patrimoine informatique</strong><span>Postes des nouveaux arrivants (mission 2), prêts et retours de PC, salles informatiques</span></div>
+      <div class="competence"><strong>Répondre aux incidents et aux demandes d'assistance et d'évolution</strong><span>Support de niveau 1 et 2 (mission 5)</span></div>
+      <div class="competence"><strong>Mettre à disposition des utilisateurs un service informatique</strong><span>Postes et comptes (mission 2), Microsoft Authenticator (mission 3), salles informatiques</span></div>
+  </section>
+  <!-- ===== BLOC 2 ===== -->
+  <section class="bloc-ref b2">
+    <div class="bloc-ref-haut">
+      <span class="bloc-numero">Bloc 2</span>
+      <h2>Administration des systèmes et des réseaux</h2>
+      <span class="code">Option SISR · Épreuve E5</span>
+    </div>
+      <div class="competence"><strong>Concevoir une solution d'infrastructure réseau</strong><span>VLAN du BTS SIO (mission 1)</span></div>
+      <div class="competence"><strong>Installer, tester et déployer une solution d'infrastructure réseau</strong><span>VLAN du BTS SIO (mission 1), installation de Veyon dans les salles</span></div>
+      <div class="competence"><strong>Exploiter, dépanner et superviser une solution d'infrastructure réseau</strong><span>Règles de pare-feu (mission 4), support (mission 5), serveurs Windows et Linux</span></div>
+  </section>
+  <!-- ===== BLOC 3 ===== -->
+  <section class="bloc-ref b3">
+    <div class="bloc-ref-haut">
+      <span class="bloc-numero">Bloc 3</span>
+      <h2>Cybersécurité des services informatiques</h2>
+      <span class="code">Épreuve E6</span>
+    </div>
+      <div class="competence"><strong>Protéger les données à caractère personnel</strong><span>Comptes et droits des nouveaux arrivants (mission 2), maintenance des PC et RGPD</span></div>
+      <div class="competence"><strong>Sécuriser les équipements et les usages des utilisateurs</strong><span>Microsoft Authenticator (mission 3), maintenance des PC</span></div>
+      <div class="competence"><strong>Garantir la disponibilité, l'intégrité et la confidentialité des services informatiques et des données de l'organisation face à des cyberattaques</strong><span>Pare-feu pendant les examens (mission 4)</span></div>
+  </section>
+</main>
+
+<!-- ===== PIED DE PAGE ===== -->
+<footer>
+  <div class="conteneur pied">
+    <span>Tomas Latour · BTS SIO option SISR · Écoles Vidal, Toulouse · 2025-2027</span>
+    <span><a href="https://www.linkedin.com/in/tomas-latour-89b52a328/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Tomas090405" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

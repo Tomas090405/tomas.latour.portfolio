@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- ===== Réglages de la page (invisibles pour le visiteur) ===== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio BTS SIO option SISR de Tomas Latour, alternant aux Écoles Vidal à Toulouse.">
+<title>Portfolio Tomas Latour</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!-- Les polices (Google Fonts) puis notre fichier de style commun -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== EN-TÊTE : le même sur toutes les pages ===== -->
+<header class="entete">
+  <div class="conteneur">
+    <div class="entete-haut">
+      <a class="marque" href="index.html"><img src="photo.jpg" alt="" width="36" height="36">Tomas Latour</a>
+      <button class="bouton bouton-contour bouton-petit" id="bouton-theme" type="button">Mode sombre</button>
+    </div>
+    <!-- Le menu : la classe "actif" colore la page où l'on se trouve -->
+    <nav class="menu">
+      <a href="index.html" class="actif">Accueil</a>
+      <a href="parcours.html">Parcours</a>
+      <a href="entreprise.html">Entreprise</a>
+      <a href="missions.html">Missions</a>
+      <a href="competences.html">Compétences</a>
+      <a href="synthese.html">Tableau de synthèse</a>
+      <a href="veille.html">Veille</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== CONTENU DE LA PAGE ===== -->
+<main class="conteneur">
+  <!-- Haut de l'accueil : présentation + fenêtre de terminal -->
+  <section class="accueil">
+    <div>
+      <span class="code">BTS SIO option SISR · Session 2027</span>
+      <h1>Tomas Latour, technicien systèmes et réseaux</h1>
+      <p>Alternant au service informatique des Écoles Vidal à Toulouse. J'administre les postes, les comptes, le réseau et la sécurité d'un campus et de ses écoles partenaires.</p>
+      <div class="actions">
+        <a class="bouton" href="missions.html">Voir mes missions</a>
+        <a class="bouton bouton-contour" href="competences.html">Mes compétences</a>
+      </div>
+    </div>
+    <div class="terminal" aria-label="Résumé du profil sous forme de terminal">
+      <div class="terminal-barre"><span></span><span></span><span></span></div>
+      <div class="terminal-corps">
+        <div><span class="invite">tomas@vidal:~$</span> whoami</div>
+        <div>Tomas Latour · alternant SISR</div>
+        <div><span class="invite">tomas@vidal:~$</span> cat competences.txt</div>
+        <div><span class="dim">[bloc 1]</span> support, parc, services</div>
+        <div><span class="dim">[bloc 2]</span> AD, VLAN, serveurs</div>
+        <div><span class="dim">[bloc 3]</span> MFA, pare-feu, RGPD</div>
+        <div><span class="invite">tomas@vidal:~$</span> <span class="curseur"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos de moi -->
+  <section class="bloc-page apropos">
+    <img src="photo.jpg" alt="Photo de Tomas Latour" width="200" height="200">
+    <div>
+      <h2>À propos de moi</h2>
+      <p>Je suis en deuxième année de BTS SIO, option SISR, aux Écoles Vidal à Toulouse. Avant le BTS, j'ai obtenu un bac général avec la spécialité NSI, puis un certificat de spécialisation Services Numériques aux Organisations, avec deux stages dans des lycées toulousains.</p>
+      <p>J'ai choisi l'option SISR parce que ce qui m'intéresse, c'est ce qui se passe derrière les postes : le réseau, les serveurs, les comptes utilisateurs et la sécurité. En alternance, je travaille sur une vraie infrastructure, utilisée chaque jour par des centaines d'étudiants et de salariés.</p>
+      <p>Après mon BTS, je souhaite continuer vers un bachelor en administration systèmes, réseaux et cybersécurité, toujours en alternance.</p>
+    </div>
+  </section>
+
+  <!-- Cartes vers les autres pages -->
+  <section class="bloc-page">
+    <h2>Explorer le portfolio</h2>
+    <div class="grille">
+      <a class="carte" href="parcours.html"><h3>Parcours</h3><p>Formations, alternance et stages.</p><span class="fleche">Ouvrir →</span></a>
+      <a class="carte" href="entreprise.html"><h3>Entreprise</h3><p>Les Écoles Vidal et leur service informatique.</p><span class="fleche">Ouvrir →</span></a>
+      <a class="carte" href="missions.html"><h3>Missions</h3><p>Cinq réalisations en entreprise, détaillées.</p><span class="fleche">Ouvrir →</span></a>
+      <a class="carte" href="competences.html"><h3>Compétences</h3><p>Les trois blocs du référentiel SISR.</p><span class="fleche">Ouvrir →</span></a>
+      <a class="carte" href="synthese.html"><h3>Tableau de synthèse</h3><p>Quelle mission prouve quelle compétence.</p><span class="fleche">Ouvrir →</span></a>
+      <a class="carte" href="veille.html"><h3>Veille</h3><p>Ma veille en cybersécurité, mes outils, mes langues et mes certifications.</p><span class="fleche">Ouvrir →</span></a>
+    </div>
+  </section>
+</main>
+
+<!-- ===== PIED DE PAGE ===== -->
+<footer>
+  <div class="conteneur pied">
+    <span>Tomas Latour · BTS SIO option SISR · Écoles Vidal, Toulouse · 2025-2027</span>
+    <span><a href="https://www.linkedin.com/in/tomas-latour-89b52a328/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Tomas090405" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

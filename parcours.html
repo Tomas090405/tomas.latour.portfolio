@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- ===== Réglages de la page (invisibles pour le visiteur) ===== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio BTS SIO option SISR de Tomas Latour, alternant aux Écoles Vidal à Toulouse.">
+<title>Parcours · Tomas Latour</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!-- Les polices (Google Fonts) puis notre fichier de style commun -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== EN-TÊTE : le même sur toutes les pages ===== -->
+<header class="entete">
+  <div class="conteneur">
+    <div class="entete-haut">
+      <a class="marque" href="index.html"><img src="photo.jpg" alt="" width="36" height="36">Tomas Latour</a>
+      <button class="bouton bouton-contour bouton-petit" id="bouton-theme" type="button">Mode sombre</button>
+    </div>
+    <!-- Le menu : la classe "actif" colore la page où l'on se trouve -->
+    <nav class="menu">
+      <a href="index.html">Accueil</a>
+      <a href="parcours.html" class="actif">Parcours</a>
+      <a href="entreprise.html">Entreprise</a>
+      <a href="missions.html">Missions</a>
+      <a href="competences.html">Compétences</a>
+      <a href="synthese.html">Tableau de synthèse</a>
+      <a href="veille.html">Veille</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== CONTENU DE LA PAGE ===== -->
+<main class="conteneur">
+  <!-- Titre de la page -->
+  <div class="haut-page">
+    <span class="code"><b>tomas@vidal</b>:~/parcours$</span>
+    <h1>Parcours</h1>
+    <p>Mes formations, mon alternance et mes stages.</p>
+  </div>
+
+  <section>
+    <h2>Formations</h2>
+    <div class="carte">
+      <div class="ligne"><span class="code">2025 – 2027</span><div><strong>BTS SIO option SISR, en alternance</strong><span class="lieu">Écoles Vidal, Toulouse</span></div><img class="logo-ecole" src="logo-vidal.png" alt="Logo des Écoles Vidal" width="110" height="41"></div>
+      <div class="ligne"><span class="code">2024 – 2025</span><div><strong>Certificat de spécialisation Services Numériques aux Organisations (CS SNO)</strong><span class="lieu">Lycée Raymond Naves, Toulouse</span></div><img class="logo-ecole" src="logo-raymond-naves.png" alt="Logo du lycée Raymond Naves"></div>
+      <div class="ligne"><span class="code">2022 – 2023</span><div><strong>Baccalauréat général, spécialités SES, HGGSP et NSI</strong><span class="lieu">Lycée Jules Fil, Carcassonne</span></div><img class="logo-ecole" src="logo-jules-fil.png" alt="Logo du lycée Jules Fil"></div>
+    </div>
+  </section>
+
+  <section class="bloc-page">
+    <h2>Expériences professionnelles</h2>
+    <div class="carte">
+      <div class="ligne"><span class="code">2025 – 2027</span><div>
+        <strong>Alternant technicien systèmes et réseaux</strong><span class="lieu">Écoles Vidal, Toulouse</span>
+        <ul>
+          <li>Support de niveau 1 et 2 pour le campus et les écoles partenaires</li>
+          <li>Administration des comptes, des postes, du réseau et du pare-feu</li>
+          <li><a href="missions.html">Voir le détail de mes missions</a></li>
+        </ul>
+      </div><img class="logo-ecole" src="logo-vidal.png" alt="Logo des Écoles Vidal" width="110" height="41"></div>
+      <div class="ligne"><span class="code">Mars – avril 2025</span><div>
+        <strong>Stage auprès de l'informaticien et du DDFPT</strong><span class="lieu">Lycée Déodat de Séverac, Toulouse</span>
+        <ul>
+          <li>Gestion du parc informatique et des tickets dans GLPI</li>
+          <li>Communication du lycée sur LinkedIn : bannière, logo et publications</li>
+        </ul>
+      </div><img class="logo-ecole" src="logo-deodat.png" alt="Logo du lycée Déodat de Séverac"></div>
+      <div class="ligne"><span class="code">Nov. – déc. 2024</span><div>
+        <strong>Stage auprès du DDFPT et de l'AED TICE</strong><span class="lieu">Lycée des Arènes, Toulouse</span>
+        <ul>
+          <li>Rénovation de la page ENT du lycée</li>
+          <li>Installation physique et mise en réseau d'une imprimante et d'un PC</li>
+        </ul>
+      </div><img class="logo-ecole" src="logo-arenes.png" alt="Logo du lycée des Arènes"></div>
+    </div>
+  </section>
+
+  <section class="bloc-page">
+    <h2>Projets du CS SNO</h2>
+    <div class="grille">
+      <div class="carte"><h3>Chatbot Botpress</h3><p>Chatbot relié à des API pour automatiser les réponses, avec son dossier technique.</p></div>
+      <div class="carte"><h3>Guide KeePass</h3><p>Procédure pour aider les utilisateurs à gérer leurs mots de passe de façon sécurisée.</p></div>
+      <div class="carte"><h3>Prise en main de GLPI</h3><p>Gestion de parc et de tickets, compte rendu complet.</p></div>
+      <div class="carte"><h3>Site web Ecotopia</h3><p>Cahier des charges, persona, arborescence, maquette puis site.</p></div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== PIED DE PAGE ===== -->
+<footer>
+  <div class="conteneur pied">
+    <span>Tomas Latour · BTS SIO option SISR · Écoles Vidal, Toulouse · 2025-2027</span>
+    <span><a href="https://www.linkedin.com/in/tomas-latour-89b52a328/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Tomas090405" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
